@@ -1,4 +1,5 @@
-import Image from "next/image"
+import LinkCard from "@/components/LinkCard"
+import ProfileInfo from "@/components/ProfileInfo"
 
 const getGhUserData = async (userName: string) => {
   const res = await fetch(`https://api.github.com/users/${userName}`)
@@ -25,22 +26,28 @@ const getGhLinkConfig = async (userName: string) => {
 const UserPage = async ({ params }: { params: { userName: string } }) => {
   const userData = await getGhUserData(params.userName)
   const ghLinkConfig = await getGhLinkConfig(params.userName)
+  const ghLinkConfigContent = Buffer.from(ghLinkConfig.content, "base64").toString()
+  const ghLinkConfigJson = JSON.parse(ghLinkConfigContent)
 
   return (
-    <>
-      <h1 className="text-xl font-bold">gh user data:</h1>
-      {userData ? (
-        <>
-          <Image src={userData["avatar_url"]} alt="Avatar" width={64} height={64} />
-          <p>{userData["login"]}</p>
-          <p>{userData["name"]}</p>
-        </>
+    <div className="w-screen flex flex-col items-center">
+      <div>
+        {userData ? (
+          <ProfileInfo avatar_url={userData.avatar_url} login={userData.login} name={userData.name} />
+        ) : (
+          <p>User not found.</p>
+        )}
+      </div>
+      {ghLinkConfig ? (
+        <div className="space-y-5">
+          {ghLinkConfigJson.links.map((data: any, index: number) => (
+            <LinkCard key={index} title={data.title} description={data.description} url={data.url} />
+          ))}
+        </div>
       ) : (
-        <p>User not found.</p>
+        <p>Config file not found.</p>
       )}
-      <h1 className="text-xl font-bold">gh link config file:</h1>
-      {ghLinkConfig ? <p>{Buffer.from(ghLinkConfig.content, "base64").toString()}</p> : <p>Config file not found.</p>}
-    </>
+    </div>
   )
 }
 
