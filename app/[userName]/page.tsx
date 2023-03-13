@@ -1,5 +1,6 @@
 import LinkCard from "@/components/LinkCard"
 import ProfileInfo from "@/components/ProfileInfo"
+import { Base64 } from "js-base64"
 
 const getGhUserData = async (userName: string) => {
   const res = await fetch(`https://api.github.com/users/${userName}`)
@@ -26,8 +27,11 @@ const getGhLinkConfig = async (userName: string) => {
 const UserPage = async ({ params }: { params: { userName: string } }) => {
   const userData = await getGhUserData(params.userName)
   const ghLinkConfig = await getGhLinkConfig(params.userName)
-  const ghLinkConfigContent = Buffer.from(ghLinkConfig.content, "base64").toString()
-  const ghLinkConfigJson = JSON.parse(ghLinkConfigContent)
+  let ghLinkConfigJson = null
+  if (ghLinkConfig) {
+    let ghLinkConfigContent = Base64.decode(ghLinkConfig.content)
+    ghLinkConfigJson = JSON.parse(ghLinkConfigContent)
+  }
 
   return (
     <div className="w-screen flex flex-col items-center">
