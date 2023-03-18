@@ -44,30 +44,32 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
 
   return (
     <div className="w-screen h-screen px-14 flex flex-col items-center bg-stone-50">
-      {user ? (
-        <>
-          <div className="mt-20 mb-8">
-            <ProfileInfo avatar_url={user.avatar_url} login={user.login} name={user.name} />
-          </div>
-          <div className="w-full flex justify-between mb-12">
-            <CountBox count={user.following} type="Following" href={user.following_url} />
-            <CountBox count={user.followers} type="Follower" href={user.followers_url} />
-            <CountBox count={user.public_repos} type="Repo" href={user.repos_url} />
-          </div>
-        </>
-      ) : (
-        <p>User not found.</p>
-      )}
+      <div className="w-full md:w-2/3 xl:w-1/2">
+        {user ? (
+          <>
+            <div className="mt-20 mb-8">
+              <ProfileInfo avatar_url={user.avatar_url} login={user.login} name={user.name} />
+            </div>
+            <div className="w-full flex justify-between mb-12">
+              <CountBox count={user.following} type="Following" href={user.following_url} />
+              <CountBox count={user.followers} type="Follower" href={user.followers_url} />
+              <CountBox count={user.public_repos} type="Repo" href={user.repos_url} />
+            </div>
+          </>
+        ) : (
+          <p>User not found.</p>
+        )}
 
-      {ghLinkConfigJson ? (
-        <div className="space-y-8 w-full">
-          {ghLinkConfigJson.links.map((data: any, index: number) => (
-            <LinkCard key={index} title={data.title} description={data.description} url={data.url} />
-          ))}
-        </div>
-      ) : (
-        <p>Config file not found.</p>
-      )}
+        {ghLinkConfigJson ? (
+          <div className="space-y-8 w-full">
+            {ghLinkConfigJson.links.map((data: any, index: number) => (
+              <LinkCard key={index} title={data.title} description={data.description} url={data.url} />
+            ))}
+          </div>
+        ) : (
+          <p>Config file not found.</p>
+        )}
+      </div>
     </div>
   )
 }
