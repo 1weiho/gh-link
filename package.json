@@ -15,6 +15,7 @@
     "@vercel/analytics": "^0.1.11",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.4",
+    "fast-average-color": "^9.3.0",
     "js-base64": "^3.7.5",
     "next": "13.2.4",
     "react": "18.2.0",
