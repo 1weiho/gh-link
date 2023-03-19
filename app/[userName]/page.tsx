@@ -71,7 +71,7 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
         )}
 
         {ghLinkConfigJson ? (
-          <div className="space-y-8 w-full">
+          <div className="space-y-6 w-full">
             {ghLinkConfigJson.links.map((data: any, index: number) => (
               <LinkCard key={index} title={data.title} description={data.description} url={data.url} />
             ))}

@@ -11,7 +11,7 @@ const LinkCard = (Props: { title: string; description: string; url: string }) =>
   return (
     <a
       href={Props.url}
-      className="px-6 py-6 rounded-3xl border-[0.1rem] border-slate-200 flex w-full items-center space-x-4"
+      className="px-6 py-4 rounded-3xl border-[0.08rem] border-slate-300 shadow shadow-slate-100 flex w-full items-center space-x-4"
     >
       <Image
         src={`https://www.google.com/s2/favicons?domain=${domain}&sz=256`}
