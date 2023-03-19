@@ -41,7 +41,7 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
   const ghLinkConfigJson = ghLinkConfig ? JSON.parse(Base64.decode(ghLinkConfig.content)) : null
 
   return (
-    <div className="w-screen h-screen px-14 flex flex-col items-center bg-stone-50">
+    <div className="w-screen h-screen px-8 md:px-14 flex flex-col items-center bg-stone-50">
       <div className="w-full md:w-2/3 xl:w-1/2">
         {user ? (
           <>
