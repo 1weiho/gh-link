@@ -49,9 +49,21 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
               <ProfileInfo avatar_url={user.avatar_url} login={user.login} name={user.name} />
             </div>
             <div className="w-full flex justify-between mb-12">
-              <CountBox count={user.following} type="Following" href={user.following_url} />
-              <CountBox count={user.followers} type="Follower" href={user.followers_url} />
-              <CountBox count={user.public_repos} type="Repo" href={user.repos_url} />
+              <CountBox
+                count={user.following}
+                type="Following"
+                href={`https://github.com/${user.login}?tab=following`}
+              />
+              <CountBox
+                count={user.followers}
+                type="Follower"
+                href={`https://github.com/${user.login}?tab=followers`}
+              />
+              <CountBox
+                count={user.public_repos}
+                type="Repo"
+                href={`https://github.com/${user.login}?tab=repositories`}
+              />
             </div>
           </>
         ) : (
