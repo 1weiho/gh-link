@@ -13,6 +13,7 @@
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
     "@vercel/analytics": "^0.1.11",
+    "encoding": "^0.1.13",
     "eslint": "8.35.0",
     "eslint-config-next": "13.2.4",
     "fast-average-color": "^9.3.0",
