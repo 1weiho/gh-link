@@ -35,7 +35,7 @@ const getGhLinkConfig = async (userName: string) => {
     return null
   }
 
-  return res
+  return res as any
 }
 
 const UserPage = async ({ params }: { params: { userName: string } }) => {
