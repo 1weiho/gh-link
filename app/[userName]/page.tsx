@@ -4,7 +4,7 @@ import CountBox from "@/components/CountBox"
 import { Base64 } from "js-base64"
 
 const getGhUser = async (userName: string) => {
-  const res = await fetch(`https://api.github.com/users/${userName}`)
+  const res = await fetch(`https://api.github.com/users/${userName}`, { cache: "no-store" })
 
   if (!res.ok) {
     return null
@@ -19,7 +19,7 @@ const getGhUser = async (userName: string) => {
 }
 
 const getGhLinkConfig = async (userName: string) => {
-  const res = await fetch(`https://api.github.com/repos/${userName}/${userName}/contents/gh-link.json`)
+  const res = await fetch(`https://api.github.com/repos/${userName}/${userName}/contents/gh-link.json`, { cache: "no-store" })
 
   if (!res.ok) {
     return null
