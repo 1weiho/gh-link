@@ -13,7 +13,6 @@ const getGhUser = async (userName: string) => {
   }
 
   const resJson: any = await res.json()
-  console.log("resJson: ", resJson)
 
   if (resJson.message === "Not Found") {
     return null
