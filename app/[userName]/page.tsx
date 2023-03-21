@@ -1,7 +1,6 @@
 import LinkCard from "@/components/LinkCard"
 import ProfileInfo from "@/components/ProfileInfo"
 import CountBox from "@/components/CountBox"
-import { Base64 } from "js-base64"
 
 const getGhUser = async (userName: string) => {
   const res = await fetch(`https://api.github.com/users/${userName}`, {
@@ -38,7 +37,9 @@ const getGhLinkConfig = async (userName: string) => {
     return null
   }
 
-  return resJson
+  const content = resJson.content
+  const decodedContent = Buffer.from(content, "base64").toString("utf-8")
+  return JSON.parse(decodedContent)
 }
 
 const UserPage = async ({ params }: { params: { userName: string } }) => {
