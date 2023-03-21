@@ -2,40 +2,31 @@ import LinkCard from "@/components/LinkCard"
 import ProfileInfo from "@/components/ProfileInfo"
 import CountBox from "@/components/CountBox"
 import { Base64 } from "js-base64"
-import { Octokit } from "octokit"
-
-const octokit = new Octokit({ auth: process.env.GITHUB_ACCESS_TOKEN })
 
 const getGhUser = async (userName: string) => {
-  const res = await octokit.request("GET /users/{username}", {
-    headers: {
-      "X-GitHub-Api-Version": "2022-11-28",
-    },
-    username: userName,
+  const res = await fetch(`https://api.github.com/users/${userName}`, {
+    headers: { Authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}` },
+    next: { revalidate: 60 },
   })
 
   if (!res) {
     return null
   }
 
-  return res
+  return res.json()
 }
 
 const getGhLinkConfig = async (userName: string) => {
-  const res = await octokit.request("GET /repos/{owner}/{repo}/contents/{path}", {
-    owner: userName,
-    repo: userName,
-    path: "gh-link.json",
-    headers: {
-      "X-GitHub-Api-Version": "2022-11-28",
-    },
+  const res = await fetch(`https://api.github.com/repos/${userName}/${userName}/contents/gh-link.json`, {
+    headers: { Authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}` },
+    next: { revalidate: 60 },
   })
 
   if (!res) {
     return null
   }
 
-  return res as any
+  return res.json()
 }
 
 const UserPage = async ({ params }: { params: { userName: string } }) => {
@@ -44,7 +35,7 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
 
   const [user, ghLinkConfig] = await Promise.all([userData, ghLinkConfigData])
 
-  const ghLinkConfigJson = ghLinkConfig ? JSON.parse(Base64.decode(ghLinkConfig.data.content)) : null
+  const ghLinkConfigJson = ghLinkConfig ? JSON.parse(Base64.decode(ghLinkConfig.content)) : null
 
   return (
     <div className="w-screen h-screen px-8 md:px-14 flex flex-col items-center bg-stone-50">
@@ -52,23 +43,23 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
         {user ? (
           <>
             <div className="mt-20 mb-8">
-              <ProfileInfo avatar_url={user.data.avatar_url} login={user.data.login} name={user.data.name} />
+              <ProfileInfo avatar_url={user.avatar_url} login={user.login} name={user.name} />
             </div>
             <div className="w-full flex justify-between mb-12">
               <CountBox
-                count={user.data.following}
+                count={user.following}
                 type="Following"
-                href={`https://github.com/${user.data.login}?tab=following`}
+                href={`https://github.com/${user.login}?tab=following`}
               />
               <CountBox
-                count={user.data.followers}
+                count={user.followers}
                 type="Follower"
-                href={`https://github.com/${user.data.login}?tab=followers`}
+                href={`https://github.com/${user.login}?tab=followers`}
               />
               <CountBox
-                count={user.data.public_repos}
+                count={user.public_repos}
                 type="Repo"
-                href={`https://github.com/${user.data.login}?tab=repositories`}
+                href={`https://github.com/${user.login}?tab=repositories`}
               />
             </div>
           </>
