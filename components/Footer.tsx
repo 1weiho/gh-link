@@ -3,8 +3,8 @@ import { Github } from "lucide-react"
 
 const Footer = () => {
   return (
-    <div className="bg-black w-screen h-60 flex flex-col justify-center items-center relative">
-      <Image src="/gh-link.svg" alt="GH Link Icon" width={256} height={256} className="h-14 w-14" />
+    <div className="bg-black w-screen h-60 flex flex-col items-center relative">
+      <Image src="/gh-link.svg" alt="GH Link Icon" width={256} height={256} className="h-14 w-14 mt-12" />
       <p className="text-white text-xl tracking-widest font-mono font-semibold mb-1">GH Link</p>
       <a className="text-gray-500 text-xs tracking-widest font-mono">Create your own link now</a>
       <div className="flex absolute bottom-5 w-full justify-between px-6">
