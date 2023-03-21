@@ -48,7 +48,7 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
 
   return (
     <>
-      <div className="w-screen min-h-screen px-8 md:px-14 flex flex-col items-center bg-stone-50">
+      <div className="w-screen min-h-screen pb-20 px-8 md:px-14 flex flex-col items-center bg-stone-50">
         <div className="w-full md:w-2/3 xl:w-1/2">
           {user ? (
             <>
