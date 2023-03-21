@@ -9,11 +9,18 @@ const getGhUser = async (userName: string) => {
     next: { revalidate: 60 },
   })
 
-  if (!res) {
+  if (!res.ok) {
     return null
   }
 
-  return res.json()
+  const resJson: any = await res.json()
+  console.log("resJson: ", resJson)
+
+  if (resJson.message === "Not Found") {
+    return null
+  }
+
+  return resJson
 }
 
 const getGhLinkConfig = async (userName: string) => {
@@ -22,11 +29,16 @@ const getGhLinkConfig = async (userName: string) => {
     next: { revalidate: 60 },
   })
 
-  if (!res) {
+  if (!res.ok) {
+    return null
+  }
+  const resJson: any = await res.json()
+
+  if (resJson.message === "Not Found") {
     return null
   }
 
-  return res.json()
+  return resJson
 }
 
 const UserPage = async ({ params }: { params: { userName: string } }) => {
