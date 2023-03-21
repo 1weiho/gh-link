@@ -42,12 +42,8 @@ const getGhLinkConfig = async (userName: string) => {
 }
 
 const UserPage = async ({ params }: { params: { userName: string } }) => {
-  const userData = getGhUser(params.userName)
-  const ghLinkConfigData = getGhLinkConfig(params.userName)
-
-  const [user, ghLinkConfig] = await Promise.all([userData, ghLinkConfigData])
-
-  const ghLinkConfigJson = ghLinkConfig ? JSON.parse(Base64.decode(ghLinkConfig.content)) : null
+  const user = await getGhUser(params.userName)
+  const ghLinkConfigJson = await getGhLinkConfig(params.userName)
 
   return (
     <div className="w-screen h-screen px-8 md:px-14 flex flex-col items-center bg-stone-50">
