@@ -20,7 +20,7 @@ To use GH Link, follow these steps:
         {
           "title": "GitHub",
           "description": "GitHub Official Website",
-          "url": "https://github.com/github",
+          "url": "https://github.com",
           "icon": "https://cdn-icons-png.flaticon.com/512/25/25231.png"
         },
         {
