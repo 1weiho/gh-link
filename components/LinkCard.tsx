@@ -14,12 +14,12 @@ const LinkCard = (Props: { title: string; description: string; url: string; icon
       {Props.icon ? (
         <Image src={Props.icon} width={256} height={256} alt="website icon" className="h-8 w-8" />
       ) : (
-        <Link />
+        <Link className="h-8 w-8 p-1" />
       )}
 
       <div className="flex flex-col">
-        <h1 className="text-slate-800 text-xl">{Props.title}</h1>
-        <p className="text-slate-600">{Props.description}</p>
+        <h1 className="text-slate-800 text-lg">{Props.title}</h1>
+        <p className="text-slate-600 text-sm">{Props.description}</p>
       </div>
     </a>
   )

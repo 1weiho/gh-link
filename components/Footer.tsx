@@ -5,14 +5,14 @@ const Footer = () => {
   return (
     <div className="bg-black w-screen h-60 flex flex-col items-center relative">
       <Image src="/gh-link.svg" alt="GH Link Icon" width={256} height={256} className="h-14 w-14 mt-12" />
-      <p className="text-white text-xl tracking-widest font-mono font-semibold mb-1">GH Link</p>
+      <p className="text-white text-xl tracking-widest font-mono mb-1">GH Link</p>
       <a className="text-gray-500 text-xs tracking-widest font-mono">Create your own link now</a>
       <div className="flex absolute bottom-5 w-full justify-between px-6">
         <a className="flex space-x-2" href="https://github.com/davidho0403/gh-link">
           <Github className="text-white h-4 w-4" />
           <p className="text-white text-xs font-mono">Star Project</p>
         </a>
-        <div className="flex items-center">
+        <a className="flex items-center" href="https://vercel.com/">
           <p className="text-white text-xs font-mono">Powered By</p>
           <svg aria-label="Vercel logotype" height="14" role="img" viewBox="0 0 283 64" width="80">
             <path
@@ -20,7 +20,7 @@ const Footer = () => {
               fill="white"
             ></path>
           </svg>
-        </div>
+        </a>
       </div>
     </div>
   )
