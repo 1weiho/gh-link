@@ -9,7 +9,18 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        scrollDown: {
+          '0%': { transform: 'translate(0%, 0%)' },
+          '50%': { transform: 'translate(0%, -15%)' },
+          '100%': { transform: 'translate(0%, 0%)' },
+        }
+      },
+      animation: {
+        scrollDown: 'scrollDown 2s ease-in-out infinite',
+      }
+    },
   },
   plugins: [],
 }
