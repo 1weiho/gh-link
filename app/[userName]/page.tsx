@@ -1,50 +1,60 @@
-import LinkCard from "@/components/LinkCard"
-import ProfileInfo from "@/components/ProfileInfo"
-import CountBox from "@/components/CountBox"
-import Footer from "@/components/Footer"
+import LinkCard from "@/components/LinkCard";
+import ProfileInfo from "@/components/ProfileInfo";
+import CountBox from "@/components/CountBox";
+import Footer from "@/components/Footer";
+
+// TODO: Type definition
+type User = {};
+type GhLinkConfig = {};
+
+export async function generateMetadata({ params }: { params: { userName: string } }) {
+  return {
+    title: params.userName + " | GH Link",
+  };
+}
 
 const getGhUser = async (userName: string) => {
   const res = await fetch(`https://api.github.com/users/${userName}`, {
     headers: { Authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}` },
     next: { revalidate: 60 },
-  })
+  });
 
   if (!res.ok) {
-    return null
+    return null;
   }
 
-  const resJson: any = await res.json()
+  const resJson: any = await res.json();
 
   if (resJson.message === "Not Found") {
-    return null
+    return null;
   }
 
-  return resJson
-}
+  return resJson;
+};
 
 const getGhLinkConfig = async (userName: string) => {
   const res = await fetch(`https://api.github.com/repos/${userName}/${userName}/contents/gh-link.json`, {
     headers: { Authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}` },
     next: { revalidate: 60 },
-  })
+  });
 
   if (!res.ok) {
-    return null
+    return null;
   }
-  const resJson: any = await res.json()
+  const resJson: any = await res.json();
 
   if (resJson.message === "Not Found") {
-    return null
+    return null;
   }
 
-  const content = resJson.content
-  const decodedContent = Buffer.from(content, "base64").toString("utf-8")
-  return JSON.parse(decodedContent)
-}
+  const content = resJson.content;
+  const decodedContent = Buffer.from(content, "base64").toString("utf-8");
+  return JSON.parse(decodedContent);
+};
 
 const UserPage = async ({ params }: { params: { userName: string } }) => {
-  const user = await getGhUser(params.userName)
-  const ghLinkConfigJson = await getGhLinkConfig(params.userName)
+  const user = await getGhUser(params.userName);
+  const ghLinkConfigJson = await getGhLinkConfig(params.userName);
 
   return (
     <>
@@ -96,7 +106,7 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
       </div>
       <Footer />
     </>
-  )
-}
+  );
+};
 
-export default UserPage
+export default UserPage;
