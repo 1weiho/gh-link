@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Mouse, Github } from "lucide-react";
+import Nav from "./Nav";
 
 const Banner = () => {
   return (
@@ -7,26 +8,7 @@ const Banner = () => {
       {/* TODO: move blur color to parent component */}
       <div className="hidden lg:block h-96 w-96 bg-gradient-to-r from-sky-500 to-sky-200 absolute rounded-full blur-3xl opacity-40 -ml-40 -mt-40 -z-10"></div>
       <div className="hidden lg:block h-96 w-96 bg-gradient-to-br from-violet-500 to-violet-200 absolute rounded-full blur-3xl opacity-25 -mr-40 right-0 bottom-0 -z-10"></div>
-      <div className="w-full p-6 lg:pt-12 lg:flex lg:justify-between">
-        <div className="flex items-center space-x-2">
-          <Image
-            src="/gh-link.svg"
-            alt="GH Link Icon"
-            width={256}
-            height={256}
-            className="h-6 w-6"
-          />
-          <p className="text-black text-base font-semibold tracking-widest">
-            GH Link
-          </p>
-        </div>
-        <a
-          href="https://github.com/davidho0403/gh-link"
-          className="hidden lg:block p-4 rounded-full hover:bg-slate-50 duration-500"
-        >
-          <Github className="h-6 w-6" />
-        </a>
-      </div>
+      <Nav />
       <div>
         <div className="w-full mt-20 lg:mt-0 flex flex-col items-center px-10">
           <h1 className="text-4xl lg:text-5xl font-bold lg:font-black text-center leading-normal lg:leading-normal text-black">

@@ -2,6 +2,8 @@ import LinkCard from "@/components/LinkCard";
 import ProfileInfo from "@/components/ProfileInfo";
 import CountBox from "@/components/CountBox";
 import Footer from "@/components/Footer";
+import Banner from "@/components/Banner";
+import Nav from "@/components/Nav";
 
 // TODO: Type definition
 type User = {};
@@ -65,10 +67,14 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
 
   return (
     <>
+      <div className="hidden lg:block h-96 w-96 bg-gradient-to-r from-sky-500 to-sky-200 absolute rounded-full blur-3xl opacity-40 -ml-40 -mt-40 -z-10"></div>
+      <div className="hidden lg:block">
+        <Nav />
+      </div>
       <div className="w-screen min-h-screen pb-20 px-8 md:px-14 flex flex-col items-center">
-        <div className="w-full md:w-2/3 xl:w-1/2">
+        <div className="w-full lg:flex lg:justify-between lg:px-20 lg:space-x-12">
           {user ? (
-            <>
+            <div>
               <div className="mt-20 mb-8">
                 <ProfileInfo
                   avatar_url={user.avatar_url}
@@ -93,13 +99,13 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
                   href={`https://github.com/${user.login}?tab=repositories`}
                 />
               </div>
-            </>
+            </div>
           ) : (
             <p>User not found.</p>
           )}
-
           {ghLinkConfigJson ? (
-            <div className="space-y-6 w-full">
+            <div className="space-y-6 w-full lg:w-2/3">
+              <h1 className="hidden lg:block text-3xl font-medium leading-normal text-black">Link</h1>
               {ghLinkConfigJson.links.map((data: any, index: number) => (
                 <LinkCard
                   key={index}
