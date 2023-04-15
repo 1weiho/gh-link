@@ -1,5 +1,5 @@
-import { FileJson } from "lucide-react"
-import LinkCard from "@/components/LinkCard"
+import { FileJson } from "lucide-react";
+import LinkCard from "@/components/LinkCard";
 
 const Tutorial = () => {
   return (
@@ -59,7 +59,7 @@ const Tutorial = () => {
         </p>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Tutorial
+export default Tutorial;

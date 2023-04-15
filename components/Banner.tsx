@@ -1,5 +1,5 @@
-import Image from "next/image"
-import { Mouse, Github } from "lucide-react"
+import Image from "next/image";
+import { Mouse, Github } from "lucide-react";
 
 const Banner = () => {
   return (
@@ -51,7 +51,7 @@ const Banner = () => {
         <Mouse className="text-slate-500" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Banner
+export default Banner;

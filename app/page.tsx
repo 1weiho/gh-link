@@ -1,7 +1,7 @@
-import Footer from "@/components/Footer"
-import Banner from "@/components/Banner"
-import Tutorial from "@/components/Tutorial"
-import Initialization from "@/components/Initialization"
+import Footer from "@/components/Footer";
+import Banner from "@/components/Banner";
+import Tutorial from "@/components/Tutorial";
+import Initialization from "@/components/Initialization";
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
       <Initialization />
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

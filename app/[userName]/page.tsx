@@ -7,7 +7,11 @@ import Footer from "@/components/Footer";
 type User = {};
 type GhLinkConfig = {};
 
-export async function generateMetadata({ params }: { params: { userName: string } }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: { userName: string };
+}) {
   return {
     title: params.userName + " | GH Link",
   };
@@ -33,10 +37,13 @@ const getGhUser = async (userName: string) => {
 };
 
 const getGhLinkConfig = async (userName: string) => {
-  const res = await fetch(`https://api.github.com/repos/${userName}/${userName}/contents/gh-link.json`, {
-    headers: { Authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}` },
-    next: { revalidate: 60 },
-  });
+  const res = await fetch(
+    `https://api.github.com/repos/${userName}/${userName}/contents/gh-link.json`,
+    {
+      headers: { Authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}` },
+      next: { revalidate: 60 },
+    }
+  );
 
   if (!res.ok) {
     return null;
@@ -63,7 +70,11 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
           {user ? (
             <>
               <div className="mt-20 mb-8">
-                <ProfileInfo avatar_url={user.avatar_url} login={user.login} name={user.name} />
+                <ProfileInfo
+                  avatar_url={user.avatar_url}
+                  login={user.login}
+                  name={user.name}
+                />
               </div>
               <div className="w-full flex justify-between mb-12">
                 <CountBox

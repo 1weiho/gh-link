@@ -25,7 +25,7 @@ const Initialization = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Initialization
+export default Initialization;
