@@ -12,8 +12,12 @@ export async function generateMetadata({
 }: {
   params: { userName: string };
 }) {
+  const user = await getGhUser(params.userName);
   return {
     title: params.userName + " | GH Link",
+    icons: {
+      icon: user.avatar_url,
+    },
   };
 }
 
