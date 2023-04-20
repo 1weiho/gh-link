@@ -2,6 +2,9 @@ import LinkCard from "@/components/LinkCard";
 import ProfileInfo from "@/components/ProfileInfo";
 import CountBox from "@/components/CountBox";
 import Footer from "@/components/Footer";
+import Banner from "@/components/Banner";
+import Nav from "@/components/Nav";
+import CountBoxGroup from "@/components/CountBoxGroup";
 
 // TODO: Type definition
 type User = {};
@@ -69,10 +72,14 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
 
   return (
     <>
-      <div className="w-screen min-h-screen pb-20 px-8 md:px-14 flex flex-col items-center">
-        <div className="w-full md:w-2/3 xl:w-1/2">
+      <div className="hidden lg:block h-96 w-96 bg-gradient-to-r from-sky-500 to-sky-200 absolute rounded-full blur-3xl opacity-40 -ml-40 -mt-40 -z-10"></div>
+      <div className="w-screen min-h-screen lg:h-screen pb-20 px-8 md:px-14 flex flex-col items-center">
+        <div className="hidden lg:block w-full min-h-20">
+          <Nav />
+        </div>
+        <div className="w-full lg:flex lg:justify-between lg:px-20 lg:space-x-12 lg:max-h-full">
           {user ? (
-            <>
+            <div>
               <div className="mt-20 mb-8">
                 <ProfileInfo
                   avatar_url={user.avatar_url}
@@ -80,30 +87,18 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
                   name={user.name}
                 />
               </div>
-              <div className="w-full flex justify-between mb-12">
-                <CountBox
-                  count={user.following}
-                  type="Following"
-                  href={`https://github.com/${user.login}?tab=following`}
-                />
-                <CountBox
-                  count={user.followers}
-                  type="Follower"
-                  href={`https://github.com/${user.login}?tab=followers`}
-                />
-                <CountBox
-                  count={user.public_repos}
-                  type="Repo"
-                  href={`https://github.com/${user.login}?tab=repositories`}
-                />
+              <div className="w-full flex mb-12">
+                <CountBoxGroup user={user} />
               </div>
-            </>
+            </div>
           ) : (
             <p>User not found.</p>
           )}
-
           {ghLinkConfigJson ? (
-            <div className="space-y-6 w-full">
+            <div className="space-y-6 w-full lg:w-2/3 lg:max-h-full lg:overflow-y-scroll lg:pb-20 lg:scrollbar-hide">
+              <h1 className="hidden lg:block text-3xl font-semibold leading-normal text-black tracking-wider">
+                Links
+              </h1>
               {ghLinkConfigJson.links.map((data: any, index: number) => (
                 <LinkCard
                   key={index}
