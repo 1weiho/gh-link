@@ -14,7 +14,7 @@ const ProfileInfo = (Props: {
         height={256}
         className="h-36 w-36 rounded-full"
       />
-      <p className="text-xl tracking-wider text-slate-800 mt-4">
+      <p className="mt-4 text-xl tracking-wider text-slate-800">
         @{Props.login}
       </p>
     </div>

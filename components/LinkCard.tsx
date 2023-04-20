@@ -14,7 +14,7 @@ const LinkCard = (Props: {
   return (
     <a
       href={Props.url}
-      className="px-6 py-4 rounded-3xl border-[0.08rem] border-slate-300 shadow shadow-slate-100 flex w-full items-center space-x-4"
+      className="flex w-full items-center space-x-4 rounded-3xl border-[0.08rem] border-slate-300 px-6 py-4 shadow shadow-slate-100"
     >
       {Props.icon ? (
         <Image
@@ -29,8 +29,8 @@ const LinkCard = (Props: {
       )}
 
       <div className="flex flex-col">
-        <h1 className="text-slate-800 text-lg">{Props.title}</h1>
-        <p className="text-slate-600 text-sm">{Props.description}</p>
+        <h1 className="text-lg text-slate-800">{Props.title}</h1>
+        <p className="text-sm text-slate-600">{Props.description}</p>
       </div>
     </a>
   );

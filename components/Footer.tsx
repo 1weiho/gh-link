@@ -3,30 +3,30 @@ import { Github } from "lucide-react";
 
 const Footer = () => {
   return (
-    <div className="bg-black w-screen h-60 flex flex-col items-center relative">
+    <div className="relative flex h-60 w-screen flex-col items-center bg-black">
       <Image
         src="/gh-link.svg"
         alt="GH Link Icon"
         width={256}
         height={256}
-        className="h-14 w-14 mt-12"
+        className="mt-12 h-14 w-14"
       />
-      <p className="text-white text-xl tracking-widest font-mono mb-1">
+      <p className="mb-1 font-mono text-xl tracking-widest text-white">
         GH Link
       </p>
-      <a className="text-gray-500 text-xs tracking-widest font-mono">
+      <a className="font-mono text-xs tracking-widest text-gray-500">
         Create your own link now
       </a>
-      <div className="flex absolute bottom-5 w-full justify-between px-6">
+      <div className="absolute bottom-5 flex w-full justify-between px-6">
         <a
           className="flex space-x-2"
           href="https://github.com/davidho0403/gh-link"
         >
-          <Github className="text-white h-4 w-4" />
-          <p className="text-white text-xs font-mono">Star Project</p>
+          <Github className="h-4 w-4 text-white" />
+          <p className="font-mono text-xs text-white">Star Project</p>
         </a>
         <a className="flex items-center" href="https://vercel.com/">
-          <p className="text-white text-xs font-mono">Powered By</p>
+          <p className="font-mono text-xs text-white">Powered By</p>
           <svg
             aria-label="Vercel logotype"
             height="14"

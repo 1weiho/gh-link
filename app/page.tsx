@@ -5,7 +5,7 @@ import Initialization from "@/components/Initialization";
 
 const Home = () => {
   return (
-    <div className="w-screen flex flex-col">
+    <div className="flex w-screen flex-col">
       <Banner />
       <Tutorial />
       <Initialization />

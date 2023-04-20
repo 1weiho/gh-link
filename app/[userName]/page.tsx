@@ -72,12 +72,12 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
 
   return (
     <>
-      <div className="hidden lg:block h-96 w-96 bg-gradient-to-r from-sky-500 to-sky-200 absolute rounded-full blur-3xl opacity-40 -ml-40 -mt-40 -z-10"></div>
-      <div className="w-screen min-h-screen lg:h-screen pb-20 px-8 md:px-14 flex flex-col items-center">
-        <div className="hidden lg:block w-full min-h-20">
+      <div className="absolute -z-10 -ml-40 -mt-40 hidden h-96 w-96 rounded-full bg-gradient-to-r from-sky-500 to-sky-200 opacity-40 blur-3xl lg:block"></div>
+      <div className="flex min-h-screen w-screen flex-col items-center px-8 pb-20 md:px-14 lg:h-screen">
+        <div className="min-h-20 hidden w-full lg:block">
           <Nav />
         </div>
-        <div className="w-full lg:flex lg:justify-between lg:px-20 lg:space-x-12 lg:max-h-full">
+        <div className="w-full lg:flex lg:max-h-full lg:justify-between lg:space-x-12 lg:px-20">
           {user ? (
             <div>
               <div className="mt-20 mb-8">
@@ -87,7 +87,7 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
                   name={user.name}
                 />
               </div>
-              <div className="w-full flex mb-12">
+              <div className="mb-12 flex w-full">
                 <CountBoxGroup user={user} />
               </div>
             </div>
@@ -95,8 +95,8 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
             <p>User not found.</p>
           )}
           {ghLinkConfigJson ? (
-            <div className="space-y-6 w-full lg:w-2/3 lg:max-h-full lg:overflow-y-scroll lg:pb-20 lg:scrollbar-hide">
-              <h1 className="hidden lg:block text-3xl font-semibold leading-normal text-black tracking-wider">
+            <div className="w-full space-y-6 lg:max-h-full lg:w-2/3 lg:overflow-y-scroll lg:pb-20 lg:scrollbar-hide">
+              <h1 className="hidden text-3xl font-semibold leading-normal tracking-wider text-black lg:block">
                 Links
               </h1>
               {ghLinkConfigJson.links.map((data: any, index: number) => (

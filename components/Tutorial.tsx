@@ -4,27 +4,27 @@ import LinkCard from "@/components/LinkCard";
 const Tutorial = () => {
   return (
     <>
-      <div className="w-full flex mt-20 px-8 flex-col">
-        <h3 className="font-bold text-2xl tracking-wider">How to use</h3>
-        <p className="text-slate-500 text-xs leading-normal mt-4">
+      <div className="mt-20 flex w-full flex-col px-8">
+        <h3 className="text-2xl font-bold tracking-wider">How to use</h3>
+        <p className="mt-4 text-xs leading-normal text-slate-500">
           Add a{" "}
-          <span className="text-rose-500 bg-slate-100 rounded-sm px-1 mx-1 py-0.5 border border-slate-200">
+          <span className="mx-1 rounded-sm border border-slate-200 bg-slate-100 px-1 py-0.5 text-rose-500">
             gh-config.json
           </span>{" "}
           file to your special {"repository's"} root (the repo with your
           username).
         </p>
-        <a href="" className="text-slate-300 text-xs underline mt-2">
+        <a href="" className="mt-2 text-xs text-slate-300 underline">
           See the example
         </a>
         <div>
-          <div className="flex text-slate-500 text-xs mt-6 items-center space-x-1">
+          <div className="mt-6 flex items-center space-x-1 text-xs text-slate-500">
             <FileJson className="h-4 w-4" />
             <p>gh-config.json</p>
           </div>
           <div className="mt-2">
             {/* TODO: syntax highlighting */}
-            <p className="text-slate-500 text-xs bg-slate-100 rounded-sm p-3 border border-slate-200">{`
+            <p className="rounded-sm border border-slate-200 bg-slate-100 p-3 text-xs text-slate-500">{`
       {
         "links": [
           {
@@ -38,7 +38,7 @@ const Tutorial = () => {
       }`}</p>
           </div>
         </div>
-        <p className="text-slate-500 text-xs leading-normal my-8">
+        <p className="my-8 text-xs leading-normal text-slate-500">
           {`In this JSON configuration, each link button is wrapped into an object in the links array, allowing you to add
     as many as you like. The icon option is optional; if you don't need to customize the icon, you can delete the
     icon option and the icon will default to the "🔗" icon. The diagram below corresponds to the above
@@ -50,7 +50,7 @@ const Tutorial = () => {
           url=""
           icon=""
         />
-        <p className="text-slate-500 text-xs leading-normal my-8">
+        <p className="my-8 text-xs leading-normal text-slate-500">
           After setting up the configuration file, you can check your personal
           link-in-bio website by going to <br />
           <a href="" className="text-blue-600 underline">

@@ -1,20 +1,20 @@
 import CountBox from "./CountBox";
 
-const CountBoxGroup = (Props: {user: any}) => {
+const CountBoxGroup = (Props: { user: any }) => {
   return (
-    <div className="w-full flex justify-between items-center lg:rounded-xl lg:overflow-hidden lg:bg-stone-50">
+    <div className="flex w-full items-center justify-between lg:overflow-hidden lg:rounded-xl lg:bg-stone-50">
       <CountBox
         count={Props.user.following}
         type="Following"
         href={`https://github.com/${Props.user.login}?tab=following`}
       />
-      <span className="bg-slate-200 w-[.1rem] h-1/3 hidden lg:block"></span>
+      <span className="hidden h-1/3 w-[.1rem] bg-slate-200 lg:block"></span>
       <CountBox
         count={Props.user.followers}
         type="Follower"
         href={`https://github.com/${Props.user.login}?tab=followers`}
       />
-      <span className="bg-slate-200 w-[.1rem] h-1/3 hidden lg:block"></span>
+      <span className="hidden h-1/3 w-[.1rem] bg-slate-200 lg:block"></span>
       <CountBox
         count={Props.user.public_repos}
         type="Repo"

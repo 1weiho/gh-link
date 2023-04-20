@@ -1,24 +1,24 @@
 const Initialization = () => {
   return (
     <>
-      <div className="w-full flex mt-8 px-8 flex-col mb-14">
-        <h3 className="font-bold text-2xl tracking-wider">
+      <div className="mt-8 mb-14 flex w-full flex-col px-8">
+        <h3 className="text-2xl font-bold tracking-wider">
           Initialization tool
         </h3>
-        <p className="text-slate-500 text-xs leading-normal mt-4">
+        <p className="mt-4 text-xs leading-normal text-slate-500">
           We also provide an initialization tool to help you quickly create the
           config file.
         </p>
         <div className="mt-4">
-          <label className="text-slate-300 text-xs mt-2">
+          <label className="mt-2 text-xs text-slate-300">
             Enter your GitHub user name:
           </label>
           <div className="flex space-x-4">
             <input
               type="text"
-              className="bg-slate-100 rounded-sm border border-slate-200 w-full"
+              className="w-full rounded-sm border border-slate-200 bg-slate-100"
             />
-            <button className="bg-black rounded-xl text-white px-3 py-2 tracking-wider text-sm">
+            <button className="rounded-xl bg-black px-3 py-2 text-sm tracking-wider text-white">
               Submit
             </button>
           </div>
