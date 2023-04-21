@@ -1,8 +1,6 @@
 import LinkCard from "@/components/LinkCard";
 import ProfileInfo from "@/components/ProfileInfo";
-import CountBox from "@/components/CountBox";
 import Footer from "@/components/Footer";
-import Banner from "@/components/Banner";
 import Nav from "@/components/Nav";
 import CountBoxGroup from "@/components/CountBoxGroup";
 

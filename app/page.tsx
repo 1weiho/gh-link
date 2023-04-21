@@ -1,7 +1,7 @@
 import Footer from "@/components/Footer";
-import Banner from "@/components/Banner";
-import Tutorial from "@/components/Tutorial";
-import Initialization from "@/components/Initialization";
+import Banner from "@/components/homepage/Banner";
+import Tutorial from "@/components/homepage/Tutorial";
+import Initialization from "@/components/homepage/Initialization";
 
 const Home = () => {
   return (

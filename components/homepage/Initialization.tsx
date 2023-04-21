@@ -1,15 +1,16 @@
+import Title from "./Title";
+import Paragraph from "./Paragraph";
+
 const Initialization = () => {
   return (
     <>
-      <div className="mt-8 mb-14 flex w-full flex-col px-8">
-        <h3 className="text-2xl font-bold tracking-wider">
-          Initialization tool
-        </h3>
-        <p className="mt-4 text-xs leading-normal text-slate-500">
+      <div className="mt-16 mb-14 flex w-full flex-col space-y-6 px-8 lg:space-y-8 lg:px-24">
+        <Title>Initialization tool</Title>
+        <Paragraph>
           We also provide an initialization tool to help you quickly create the
           config file.
-        </p>
-        <div className="mt-4">
+        </Paragraph>
+        <div>
           <label className="mt-2 text-xs text-slate-300">
             Enter your GitHub user name:
           </label>

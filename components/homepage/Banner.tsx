@@ -1,6 +1,5 @@
-import Image from "next/image";
-import { Mouse, Github } from "lucide-react";
-import Nav from "./Nav";
+import { Mouse } from "lucide-react";
+import Nav from "../Nav";
 
 const Banner = () => {
   return (
