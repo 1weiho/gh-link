@@ -3,8 +3,8 @@ import Image from "next/image";
 
 const Nav = () => {
   return (
-    <div className="w-full p-6 lg:flex lg:justify-between lg:pt-12">
-      <div className="flex items-center space-x-2">
+    <div className="w-full p-6 lg:flex lg:justify-between lg:px-16 lg:pt-12">
+      <a className="flex items-center space-x-2" href="/">
         <Image
           src="/gh-link.svg"
           alt="GH Link Icon"
@@ -15,7 +15,7 @@ const Nav = () => {
         <p className="text-base font-semibold tracking-widest text-black">
           GH Link
         </p>
-      </div>
+      </a>
       <a
         href="https://github.com/davidho0403/gh-link"
         className="hidden rounded-full p-4 duration-500 hover:bg-slate-50 lg:block"

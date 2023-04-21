@@ -73,7 +73,8 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
   return (
     <>
       <div className="absolute -z-10 -ml-40 -mt-40 hidden h-96 w-96 rounded-full bg-gradient-to-r from-sky-500 to-sky-200 opacity-40 blur-3xl lg:block"></div>
-      <div className="flex min-h-screen w-screen flex-col items-center px-8 pb-20 md:px-14 lg:h-screen">
+      <div className="absolute right-0 bottom-0 -z-10 -mr-40 hidden h-96 w-96 rounded-full bg-gradient-to-br from-violet-500 to-violet-200 opacity-25 blur-3xl lg:block"></div>
+      <div className="flex min-h-screen w-screen flex-col items-center px-8 pb-20 md:px-14 lg:h-screen lg:px-0">
         <div className="min-h-20 hidden w-full lg:block">
           <Nav />
         </div>

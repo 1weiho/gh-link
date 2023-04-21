@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { FastAverageColor } from "fast-average-color";
 import { Link } from "lucide-react";
 
 const LinkCard = (Props: {
@@ -9,12 +8,11 @@ const LinkCard = (Props: {
   icon: string;
 }) => {
   // TODO: add icon domain color background
-  const fac = new FastAverageColor();
 
   return (
     <a
       href={Props.url}
-      className="flex w-full items-center space-x-4 rounded-3xl border-[0.08rem] border-slate-300 px-6 py-4 shadow shadow-slate-100"
+      className="flex w-full items-center space-x-4 rounded-3xl border-[0.08rem] border-slate-300 px-6 py-4 shadow shadow-slate-100 lg:duration-150 lg:hover:bg-slate-50"
     >
       {Props.icon ? (
         <Image
