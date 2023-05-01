@@ -27,8 +27,8 @@ const og = (request: NextRequest) => {
       >
         <div
           style={{
-            left: 42,
-            top: 42,
+            left: 80,
+            top: 80,
             position: "absolute",
             display: "flex",
             alignItems: "center",
@@ -36,13 +36,14 @@ const og = (request: NextRequest) => {
         >
           <img
             src="https://gh-link.vercel.app/gh-link.svg"
-            width={32}
-            height={32}
+            width={60}
+            height={60}
           />
           <span
             style={{
               marginLeft: 8,
-              fontSize: 20,
+              letterSpacing: "0.1em",
+              fontSize: 30,
             }}
           >
             GH Link
@@ -50,15 +51,16 @@ const og = (request: NextRequest) => {
         </div>
         <img
           src={`https://github.com/${username}.png`}
-          width={200}
-          height={200}
+          width={240}
+          height={240}
           style={{
             borderRadius: "100%",
+            marginBottom: 16,
           }}
         />
         <p
           style={{
-            fontSize: 26,
+            fontSize: 40,
             letterSpacing: "0.15em",
           }}
         >
