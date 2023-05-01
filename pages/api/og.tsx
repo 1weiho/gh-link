@@ -55,7 +55,7 @@ const og = (request: NextRequest) => {
           height={240}
           style={{
             borderRadius: "100%",
-            marginBottom: 16,
+            marginBottom: 4,
           }}
         />
         <p
