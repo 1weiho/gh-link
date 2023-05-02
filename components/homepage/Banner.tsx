@@ -4,9 +4,6 @@ import Nav from "../Nav";
 const Banner = () => {
   return (
     <div className="relative overflow-hidden lg:flex lg:h-screen lg:flex-col lg:justify-between">
-      {/* TODO: move blur color to parent component */}
-      <div className="absolute -z-10 -ml-40 -mt-40 hidden h-96 w-96 rounded-full bg-gradient-to-r from-sky-500 to-sky-200 opacity-40 blur-3xl lg:block"></div>
-      <div className="absolute right-0 bottom-0 -z-10 -mr-40 hidden h-96 w-96 rounded-full bg-gradient-to-br from-violet-500 to-violet-200 opacity-25 blur-3xl lg:block"></div>
       <Nav />
       <div>
         <div className="mt-20 flex w-full flex-col items-center px-10 lg:mt-0">
