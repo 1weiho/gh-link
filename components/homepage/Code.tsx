@@ -34,8 +34,8 @@ const Code = (Props: { code: string }) => {
           language="json"
           style={docco}
           wrapLines={true}
-          className="rounded-sm border border-slate-200 font-mono text-xs"
-          customStyle={{ padding: "0 2rem 0 2rem" }}
+          className="rounded-md border border-slate-200 font-mono text-xs"
+          customStyle={{ padding: "0 2rem 0 2rem", backgroundColor: "rgb(248 250 252)" }}
         >
           {Props.code}
         </SyntaxHighlighter>
