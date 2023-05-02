@@ -4,7 +4,8 @@ import { Analytics } from "@vercel/analytics/react";
 export const metadata = {
   title: "GH Link",
   description: "A Link in Bio website configured with only a JSON file",
-  keywords: "link in bio, linktree, linktr.ee, link, bio, link bio, linktree, linktr.ee, linktr, linktree alternative, linktr alternative, linktr.ee alternative",
+  keywords:
+    "link in bio, linktree, linktr.ee, link, bio, link bio, linktree, linktr.ee, linktr, linktree alternative, linktr alternative, linktr.ee alternative",
   authors: [{ name: "Ho Yi Wei", url: "https://www.github.com/davidho0403" }],
   openGraph: {
     type: "website",
@@ -21,11 +22,11 @@ export const metadata = {
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'GH Link',
-    description: 'A Link in Bio website configured with only a JSON file',
-    creator: '@1weiho',
-    images: ['https://gh-link.vercel.app/og.png'],
+    card: "summary_large_image",
+    title: "GH Link",
+    description: "A Link in Bio website configured with only a JSON file",
+    creator: "@1weiho",
+    images: ["https://gh-link.vercel.app/og.png"],
   },
 };
 

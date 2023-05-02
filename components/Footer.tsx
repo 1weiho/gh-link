@@ -4,30 +4,35 @@ import Link from "next/link";
 
 const Footer = () => {
   return (
-    <div className="relative flex h-60 w-screen flex-col items-center bg-black">
+    <div className="relative flex h-60 w-screen flex-col items-center bg-black lg:h-80">
       <Image
         src="/gh-link.svg"
         alt="GH Link Icon"
         width={256}
         height={256}
-        className="mt-12 h-14 w-14"
+        className="mt-12 h-14 w-14 lg:mt-20 lg:h-20 lg:w-20"
       />
-      <p className="mb-1 font-mono text-xl tracking-widest text-white">
+      <p className="mb-1 font-mono text-xl tracking-widest text-white lg:text-2xl">
         GH Link
       </p>
-      <a className="font-mono text-xs tracking-widest text-gray-500">
+      <a className="font-mono text-xs tracking-widest text-gray-500 lg:text-sm">
         Create your own link now
       </a>
       <div className="absolute bottom-5 flex w-full justify-between px-6">
         <Link
-          className="flex space-x-2"
+          className="flex space-x-2 lg:duration-300 lg:hover:ms-2"
           href="https://github.com/davidho0403/gh-link"
         >
           <Github className="h-4 w-4 text-white" />
-          <p className="font-mono text-xs text-white">Star Project</p>
+          <p className="font-mono text-xs text-white lg:text-sm">
+            Star Project
+          </p>
         </Link>
-        <Link className="flex items-center" href="https://vercel.com/">
-          <p className="font-mono text-xs text-white">Powered By</p>
+        <Link
+          className="flex items-center lg:duration-300 lg:hover:mr-2"
+          href="https://vercel.com/"
+        >
+          <p className="font-mono text-xs text-white lg:text-sm">Powered By</p>
           <svg
             aria-label="Vercel logotype"
             height="14"

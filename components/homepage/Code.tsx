@@ -22,7 +22,10 @@ const Code = (Props: { code: string }) => {
       <Toaster position="bottom-right" className="hidden lg:block" />
       <div className="relative">
         <CopyToClipboard text={Props.code} onCopy={handleCopy}>
-          <button className="absolute right-4 top-4 rounded-lg bg-white p-2 text-slate-500 duration-100 hover:bg-slate-50" disabled={copied}>
+          <button
+            className="absolute right-4 top-4 rounded-lg bg-white p-2 text-slate-500 duration-100 hover:bg-slate-50"
+            disabled={copied}
+          >
             {copied ? (
               <Check className="h-4 w-4 animate-clipboard text-green-600" />
             ) : (
@@ -34,8 +37,13 @@ const Code = (Props: { code: string }) => {
           language="json"
           style={docco}
           wrapLines={true}
-          className="rounded-md border border-slate-200 font-mono text-xs"
-          customStyle={{ padding: "0 2rem 0 2rem", backgroundColor: "rgb(248 250 252)" }}
+          showLineNumbers={true}
+          lineNumberStyle={{ color: "#A0AEC0" }}
+          className="rounded-md border border-slate-200 font-mono text-xs leading-5 tracking-wider"
+          customStyle={{
+            padding: "1rem 2rem 1rem 2rem",
+            backgroundColor: "#F6F6F6",
+          }}
         >
           {Props.code}
         </SyntaxHighlighter>

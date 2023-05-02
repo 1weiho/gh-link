@@ -6,11 +6,13 @@ import { BlurColor } from "@/components/BlurColor";
 
 const Home = () => {
   return (
-    <div className="flex w-screen flex-col">
+    <div>
       <BlurColor />
       <Banner />
-      <Tutorial />
-      <Initialization />
+      <div className="flex w-screen flex-col lg:px-20 xl:px-48">
+        <Tutorial />
+        <Initialization />
+      </div>
       <Footer />
     </div>
   );

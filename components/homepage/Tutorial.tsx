@@ -3,10 +3,10 @@ import LinkCard from "@/components/LinkCard";
 import Title from "./Title";
 import Paragraph from "./Paragraph";
 import Code from "./Code";
+import Link from "next/link";
 
 const Tutorial = () => {
-  const configJsonCode: string = `
-{
+  const configJsonCode: string = `{
   "links": [
     {
       "title": "Your Title",
@@ -16,8 +16,7 @@ const Tutorial = () => {
     },
     ...
   ]
-}
-  `;
+}`;
 
   return (
     <>
@@ -34,20 +33,20 @@ const Tutorial = () => {
         <Title>How to use</Title>
         <Paragraph>
           Add a{" "}
-          <span className="mx-1 rounded-sm border border-slate-200 bg-slate-100 px-1 py-0.5 text-rose-500">
+          <span className="mx-1 rounded-md border border-slate-200 bg-slate-100 px-1.5 py-0.5 text-rose-500">
             gh-config.json
           </span>{" "}
           file to your special {"repository's"} root (the repo with your
           username).
         </Paragraph>
-        <a
+        <Link
           href="https://github.com/davidho0403/davidho0403/blob/main/gh-link.json"
-          className="text-xs text-slate-400 underline"
+          className="text-xs text-slate-400 underline lg:text-sm"
         >
           See the example
-        </a>
+        </Link>
         <div className="space-y-2">
-          <div className="flex items-center space-x-1 text-xs text-slate-500">
+          <div className="flex items-center space-x-1 text-xs text-slate-500 lg:text-sm">
             <FileJson className="h-4 w-4" />
             <p>gh-config.json</p>
           </div>
@@ -62,12 +61,14 @@ const Tutorial = () => {
             icon option and the icon will default to the "🔗" icon. The diagram below corresponds to the above
             configuration.`}
         </Paragraph>
-        <LinkCard
-          title="Your Title"
-          description="Your Description"
-          url=""
-          icon=""
-        />
+        <div className="w-full lg:w-1/2 xl:w-1/3">
+          <LinkCard
+            title="Your Title"
+            description="Your Description"
+            url=""
+            icon=""
+          />
+        </div>
         <Paragraph>
           After setting up the configuration file, you can check your personal
           link-in-bio website by going to <br />
