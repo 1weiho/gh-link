@@ -33,6 +33,13 @@ export async function generateMetadata({
         },
       ],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: params.userName + " | GH Link",
+      description: "See " + params.userName + "'s links on GH Link.",
+      creator: "@1weiho",
+      images: ["https://gh-link.vercel.app/api/og?username=" + params.userName],
+    },
   };
 }
 
