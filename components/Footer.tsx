@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Github } from "lucide-react";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -18,14 +19,14 @@ const Footer = () => {
         Create your own link now
       </a>
       <div className="absolute bottom-5 flex w-full justify-between px-6">
-        <a
+        <Link
           className="flex space-x-2"
           href="https://github.com/davidho0403/gh-link"
         >
           <Github className="h-4 w-4 text-white" />
           <p className="font-mono text-xs text-white">Star Project</p>
-        </a>
-        <a className="flex items-center" href="https://vercel.com/">
+        </Link>
+        <Link className="flex items-center" href="https://vercel.com/">
           <p className="font-mono text-xs text-white">Powered By</p>
           <svg
             aria-label="Vercel logotype"
@@ -39,7 +40,7 @@ const Footer = () => {
               fill="white"
             ></path>
           </svg>
-        </a>
+        </Link>
       </div>
     </div>
   );

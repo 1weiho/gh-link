@@ -16,9 +16,15 @@ module.exports = {
           "50%": { transform: "translate(0%, -15%)" },
           "100%": { transform: "translate(0%, 0%)" },
         },
+        clipboard: {
+          "0%": { transform: "scale(1)", color: "rgb(100 116 139)" },
+          "25%": { transform: "scale(0.8)" },
+          "50%": { transform: "scale(1)" },
+        },
       },
       animation: {
         scrollDown: "scrollDown 2s ease-in-out infinite",
+        clipboard: "clipboard 0.4s ease-in-out forwards",
       },
     },
   },

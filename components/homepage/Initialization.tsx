@@ -11,13 +11,13 @@ const Initialization = () => {
           config file.
         </Paragraph>
         <div>
-          <label className="mt-2 text-xs text-slate-300">
+          <label className="mt-2 text-xs text-slate-400">
             Enter your GitHub user name:
           </label>
           <div className="flex space-x-4">
             <input
               type="text"
-              className="w-full rounded-sm border border-slate-200 bg-slate-100"
+              className="w-full rounded-md border-2 border-slate-200"
             />
             <button className="rounded-xl bg-black px-3 py-2 text-sm tracking-wider text-white">
               Submit
