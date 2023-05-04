@@ -4,13 +4,13 @@ import { motion } from "framer-motion";
 import { Github } from "lucide-react";
 import Image from "next/image";
 
-const Nav = () => {
+const Nav = (Props: { delayTime: number }) => {
   return (
     <div className="w-full p-6 lg:flex lg:justify-between lg:px-16 lg:pt-12">
       <motion.div
         initial={{ x: -25, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.9 }}
+        transition={{ duration: 0.6, delay: Props.delayTime }}
       >
         <a className="flex items-center space-x-2" href="/">
           <Image

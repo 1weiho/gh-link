@@ -7,7 +7,7 @@ import Nav from "../Nav";
 const Banner = () => {
   return (
     <div className="relative overflow-hidden lg:flex lg:h-screen lg:flex-col lg:justify-between">
-      <Nav />
+      <Nav delayTime={0.9} />
       <div className="lg:mb-12">
         <div className="mt-20 flex w-full flex-col items-center px-10 lg:mt-0">
           <motion.div

@@ -1,8 +1,16 @@
+"use client";
+
+import { motion } from "framer-motion";
 import CountBox from "./CountBox";
 
 const CountBoxGroup = (Props: { user: any }) => {
   return (
-    <div className="flex w-full items-center justify-between lg:overflow-hidden lg:rounded-xl lg:bg-stone-50">
+    <motion.div
+      className="flex w-full items-center justify-between lg:overflow-hidden lg:rounded-xl lg:bg-stone-50"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4, delay: 0.6 }}
+    >
       <CountBox
         count={Props.user.following}
         type="Following"
@@ -20,7 +28,7 @@ const CountBoxGroup = (Props: { user: any }) => {
         type="Repo"
         href={`https://github.com/${Props.user.login}?tab=repositories`}
       />
-    </div>
+    </motion.div>
   );
 };
 
