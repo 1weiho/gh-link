@@ -23,15 +23,15 @@ const ProfileInfo = (Props: {
           className="h-36 w-36 rounded-full"
         />
       </motion.div>
-      <motion.div
+
+      <motion.p
+        className="mt-4 text-xl tracking-wider text-slate-800"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.4, delay: 0.3 }}
       >
-        <p className="mt-4 text-xl tracking-wider text-slate-800">
-          @{Props.login}
-        </p>
-      </motion.div>
+        @{Props.login}
+      </motion.p>
     </div>
   );
 };

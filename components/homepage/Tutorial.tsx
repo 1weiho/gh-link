@@ -56,20 +56,19 @@ const Tutorial = () => {
           </Link>
         </motion.div>
         <motion.div
+          className="space-y-2"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <div className="space-y-2">
-            <div className="flex items-center space-x-1 text-xs text-slate-500 lg:text-sm">
-              <FileJson className="h-4 w-4" />
-              <p>gh-config.json</p>
-            </div>
-            <div>
-              {/* TODO: syntax highlighting */}
-              <Code code={configJsonCode} />
-            </div>
+          <div className="flex items-center space-x-1 text-xs text-slate-500 lg:text-sm">
+            <FileJson className="h-4 w-4" />
+            <p>gh-config.json</p>
+          </div>
+          <div>
+            {/* TODO: syntax highlighting */}
+            <Code code={configJsonCode} />
           </div>
         </motion.div>
         <Paragraph>

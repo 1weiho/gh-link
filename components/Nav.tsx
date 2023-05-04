@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Github } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Nav = (Props: { delayTime: number }) => {
   return (
@@ -12,7 +13,7 @@ const Nav = (Props: { delayTime: number }) => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: Props.delayTime }}
       >
-        <a className="flex items-center space-x-2" href="/">
+        <Link className="flex items-center space-x-2" href="/">
           <Image
             src="/gh-link.svg"
             alt="GH Link Icon"
@@ -23,20 +24,18 @@ const Nav = (Props: { delayTime: number }) => {
           <p className="text-base font-semibold tracking-widest text-black">
             GH Link
           </p>
-        </a>
+        </Link>
       </motion.div>
-      <motion.div
+
+      <motion.a
         initial={{ x: 25, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.9 }}
+        href="https://github.com/davidho0403/gh-link"
+        className="hidden rounded-full p-4 duration-500 hover:bg-slate-50 lg:block"
       >
-        <a
-          href="https://github.com/davidho0403/gh-link"
-          className="hidden rounded-full p-4 duration-500 hover:bg-slate-50 lg:block"
-        >
-          <Github className="h-6 w-6" />
-        </a>
-      </motion.div>
+        <Github className="h-6 w-6" />
+      </motion.a>
     </div>
   );
 };
