@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const Paragraph = ({ children }: { children: React.ReactNode }) => {
   return (
     <motion.p
-      className="text-xs font-light leading-normal text-gray-600 lg:text-lg lg:leading-9 lg:tracking-wide"
+      className="text-xs font-normal leading-normal text-gray-600 lg:text-lg lg:leading-9 lg:tracking-wider"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 0.2 }}

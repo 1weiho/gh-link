@@ -26,7 +26,7 @@ const Banner = () => {
             className="mt-6 px-10 text-center text-xs leading-normal tracking-wider text-slate-500 lg:mt-12 lg:text-xl"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.15 }}
           >
             GH Link is a Link in Bio website that can be configured with only a
             JSON file.
@@ -37,7 +37,7 @@ const Banner = () => {
           className="mt-20 flex w-full justify-center lg:mt-16"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          transition={{ duration: 0.4, delay: 0.6 }}
+          transition={{ duration: 0.4, delay: 0.3 }}
         >
           <button className="rounded-xl bg-black px-3 py-2 text-sm tracking-wider text-white lg:px-5 lg:py-3">
             Create now
