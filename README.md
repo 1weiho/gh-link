@@ -24,7 +24,7 @@ To use GH Link, follow these steps:
        },
        {
          "title": "Click me",
-         "description": "Suprise 😃",
+         "description": "Surprise 😃",
          "url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
        }
      ]
