@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import Nav from "@/components/Nav";
 import CountBoxGroup from "@/components/CountBoxGroup";
 import { BlurColor } from "@/components/BlurColor";
+import Title from "@/components/homepage/Title";
 
 // TODO: Type definition
 type User = {};
@@ -95,7 +96,7 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
       <BlurColor />
       <div className="flex min-h-screen w-screen flex-col items-center px-8 pb-20 md:px-14 lg:h-screen lg:px-0">
         <div className="min-h-20 hidden w-full lg:block">
-          <Nav />
+          <Nav delayTime={0} />
         </div>
         <div className="w-full lg:flex lg:max-h-full lg:justify-between lg:space-x-12 lg:px-20">
           {user ? (
@@ -116,9 +117,7 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
           )}
           {ghLinkConfigJson ? (
             <div className="w-full space-y-6 lg:max-h-full lg:w-2/3 lg:overflow-y-scroll lg:pb-20 lg:scrollbar-hide">
-              <h1 className="hidden text-3xl font-semibold leading-normal tracking-wider text-black lg:block">
-                Links
-              </h1>
+              <Title>Links</Title>
               {ghLinkConfigJson.links.map((data: any, index: number) => (
                 <LinkCard
                   key={index}
@@ -126,6 +125,7 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
                   description={data.description}
                   url={data.url}
                   icon={data.icon}
+                  animationDelay={index / 10 + 0.3}
                 />
               ))}
             </div>

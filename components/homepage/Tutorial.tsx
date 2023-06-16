@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { FileJson } from "lucide-react";
 import LinkCard from "@/components/LinkCard";
 import Title from "./Title";
@@ -39,13 +42,26 @@ const Tutorial = () => {
           file to your special {"repository's"} root (the repo with your
           username).
         </Paragraph>
-        <Link
-          href="https://github.com/davidho0403/davidho0403/blob/main/gh-link.json"
-          className="text-xs text-slate-400 underline lg:text-sm"
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
         >
-          See the example
-        </Link>
-        <div className="space-y-2">
+          <Link
+            href="https://github.com/davidho0403/davidho0403/blob/main/gh-link.json"
+            className="text-xs text-slate-400 underline lg:text-sm"
+          >
+            See the example
+          </Link>
+        </motion.div>
+        <motion.div
+          className="space-y-2"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
           <div className="flex items-center space-x-1 text-xs text-slate-500 lg:text-sm">
             <FileJson className="h-4 w-4" />
             <p>gh-config.json</p>
@@ -54,7 +70,7 @@ const Tutorial = () => {
             {/* TODO: syntax highlighting */}
             <Code code={configJsonCode} />
           </div>
-        </div>
+        </motion.div>
         <Paragraph>
           {`In this JSON configuration, each link button is wrapped into an object in the links array, allowing you to add
             as many as you like. The icon option is optional; if you don't need to customize the icon, you can delete the
@@ -67,6 +83,7 @@ const Tutorial = () => {
             description="Your Description"
             url=""
             icon=""
+            animationDelay={0}
           />
         </div>
         <Paragraph>
