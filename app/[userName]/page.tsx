@@ -19,7 +19,7 @@ export async function generateMetadata({
   return {
     title: params.userName + " | GH Link",
     icons: {
-      icon: user.avatar_url,
+      icon: await user.avatar_url,
     },
     openGraph: {
       type: "website",
