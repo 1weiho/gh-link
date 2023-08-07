@@ -14,7 +14,7 @@
     "@types/react": "18.2.12",
     "@types/react-dom": "18.2.1",
     "@vercel/analytics": "^1.0.1",
-    "@vercel/og": "^0.5.4",
+    "@vercel/og": "^0.5.10",
     "eslint": "8.35.0",
     "framer-motion": "^10.12.7",
     "eslint-config-next": "13.4.6",
