@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
+import { GeistSans } from "geist/font/sans";
 
 export const metadata = {
   metadataBase: new URL("https://gh-link.vercel.app/"),
@@ -37,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={GeistSans.className}>
       <body>
         {children}
         <Analytics />
