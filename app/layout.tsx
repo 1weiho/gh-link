@@ -2,6 +2,7 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 
 export const metadata = {
+  metadataBase: new URL("https://gh-link.vercel.app/"),
   title: "GH Link",
   description: "A Link in Bio website configured with only a JSON file",
   keywords:
