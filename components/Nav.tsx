@@ -27,15 +27,16 @@ const Nav = (Props: { delayTime: number }) => {
         </Link>
       </motion.div>
 
-      <motion.a
+      <motion.div
         initial={{ x: 25, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.6, delay: 0.9 }}
-        href="https://github.com/davidho0403/gh-link"
-        className="hidden rounded-full p-4 duration-500 hover:bg-slate-50 lg:block"
+        transition={{ duration: 0.6, delay: Props.delayTime }}
+        className="hidden lg:block"
       >
-        <Github className="h-6 w-6" />
-      </motion.a>
+        <Link href="https://github.com/davidho0403/gh-link">
+          <Github className="h-6 w-6" />
+        </Link>
+      </motion.div>
     </div>
   );
 };
