@@ -98,7 +98,7 @@ const UserPage = async ({ params }: { params: { userName: string } }) => {
         <div className="min-h-20 hidden w-full lg:block">
           <Nav delayTime={0} />
         </div>
-        <div className="w-full lg:flex lg:max-h-full lg:justify-between lg:space-x-12 lg:px-20">
+        <div className="w-full lg:flex lg:max-h-full lg:justify-between lg:space-x-12 lg:px-28">
           {user ? (
             <div>
               <div className="mb-8 mt-20">
