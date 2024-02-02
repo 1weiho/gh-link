@@ -1,10 +1,20 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
-export const BlurColor = () => {
+interface BlurColorProps {
+  className?: string;
+}
+
+export const BlurColor = ({ className }: BlurColorProps) => {
   return (
-    <div className="absolute -z-10 h-screen w-screen overflow-x-clip">
+    <div
+      className={cn(
+        "absolute -z-10 h-screen w-screen overflow-x-clip",
+        className
+      )}
+    >
       <motion.div
         initial={{ y: -400 }}
         animate={{ y: 0 }}

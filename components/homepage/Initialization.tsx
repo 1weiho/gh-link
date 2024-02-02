@@ -1,7 +1,23 @@
+"use client";
+
 import Title from "./Title";
 import Paragraph from "./Paragraph";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 const Initialization = () => {
+  const [userName, setUserName] = useState("");
+  const router = useRouter();
+
+  const handleSubmit = () => {
+    if (!userName) {
+      toast.error("Please enter a valid GitHub username");
+      return;
+    }
+    router.push(`/${userName}/init`);
+  };
+
   return (
     <>
       <div className="mb-14 mt-16 flex w-full flex-col space-y-6 px-8 lg:space-y-8 lg:px-24">
@@ -18,8 +34,13 @@ const Initialization = () => {
             <input
               type="text"
               className="w-full rounded-md border-2 border-slate-200 ps-4 outline-none"
+              value={userName}
+              onChange={(e) => setUserName(e.target.value)}
             />
-            <button className="rounded-xl bg-black px-3 py-2 text-sm tracking-wider text-white lg:px-5 lg:text-base lg:tracking-widest">
+            <button
+              className="rounded-xl bg-black px-3 py-2 text-sm tracking-wider text-white lg:px-5 lg:text-base lg:tracking-widest"
+              onClick={handleSubmit}
+            >
               Submit
             </button>
           </div>
