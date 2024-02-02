@@ -7,11 +7,11 @@ import Nav from "../Nav";
 const Banner = () => {
   return (
     <div className="relative overflow-hidden lg:flex lg:h-screen lg:flex-col lg:justify-between">
-      <Nav delayTime={0.9} />
+      <Nav delayTime={0.7} />
       <div className="lg:mb-12">
         <div className="mt-20 flex w-full flex-col items-center px-10 lg:mt-0">
           <motion.h1
-            className="text-center text-4xl font-bold leading-normal text-black lg:text-7xl lg:font-black lg:leading-normal"
+            className="text-center text-4xl font-bold leading-normal text-black lg:text-8xl lg:leading-tight"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.4 }}
