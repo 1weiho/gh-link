@@ -1,41 +1,8 @@
 import BackgroundGrid from "@/components/background-grid";
+import GithubCard from "@/components/github-card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { getGhUser } from "@/fetchers/github";
-import { cn } from "@/lib/utils";
-import Image from "next/image";
-
-interface GitHubDataProps {
-  label: string;
-  emoji: string;
-  colorClassName: string;
-  count: number;
-}
-
-const GitHubData = ({
-  label,
-  emoji,
-  colorClassName,
-  count,
-}: GitHubDataProps) => {
-  return (
-    <div className="flex items-center space-x-4 w-full">
-      <span
-        className={cn(
-          "h-10 w-10 flex flex-shrink-0 items-center justify-center rounded-xl",
-          colorClassName
-        )}
-      >
-        {emoji}
-      </span>
-      <div className="flex items-center space-x-3 w-full">
-        <p className="text-xl">{label}</p>
-        <Separator className="w-auto grow" />
-        <p className="text-2xl">{count}</p>
-      </div>
-    </div>
-  );
-};
 
 const InitPage = async ({ params }: { params: { userName: string } }) => {
   const user = await getGhUser(params.userName);
@@ -56,42 +23,18 @@ const InitPage = async ({ params }: { params: { userName: string } }) => {
             3
           </span>
         </div>
-        <h1 className="mt-40 font-semibold text-3xl">
+        <h1 className="mt-36 font-semibold text-3xl">
           Let&apos;s get started, {user.name}.
         </h1>
-        <div className="mt-6 bg-white rounded-xl px-12 py-12 w-fit shadow flex space-x-12 items-center border">
-          <div className="flex flex-col items-center">
-            <Image
-              src={user.avatar_url}
-              alt="Avatar"
-              width={256}
-              height={256}
-              className="h-36 w-36 rounded-full"
-            />
-            <h2 className="mt-4 text-2xl">{user.name}</h2>
-          </div>
-          <div className="space-y-4 w-72">
-            <GitHubData
-              label="Following"
-              emoji="🚀"
-              colorClassName="bg-blue-100"
-              count={user.following.toLocaleString()}
-            />
-            <GitHubData
-              label="Follower"
-              emoji="🔍"
-              colorClassName="bg-green-100"
-              count={user.followers.toLocaleString()}
-            />
-            <GitHubData
-              label="Repo"
-              emoji="📦"
-              colorClassName="bg-yellow-100"
-              count={user.public_repos.toLocaleString()}
-            />
-          </div>
-        </div>
-        <Button className="mt-20">Next</Button>
+        <GithubCard
+          avatarUrl={user.avatar_url}
+          name={user.name}
+          following={user.following}
+          followers={user.followers}
+          publicRepos={user.public_repos}
+          className="mt-16"
+        />
+        <Button className="mt-20 h-10 w-20">Next</Button>
       </div>
       <div className="md:block hidden fixed inset-0 pointer-events-none">
         <BackgroundGrid className="absolute inset-0 opacity-50" />
