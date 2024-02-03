@@ -11,7 +11,7 @@ export const BlurColor = ({ className }: BlurColorProps) => {
   return (
     <div
       className={cn(
-        "absolute -z-10 h-screen w-screen overflow-x-clip",
+        "fixed -z-10 h-screen w-screen overflow-x-clip",
         className
       )}
     >
