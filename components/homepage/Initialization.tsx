@@ -5,6 +5,8 @@ import Paragraph from "./Paragraph";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
 const Initialization = () => {
   const [userName, setUserName] = useState("");
@@ -31,18 +33,16 @@ const Initialization = () => {
             Enter your GitHub user name:
           </h4>
           <div className="flex space-x-4 lg:h-12">
-            <input
+            <Input
               type="text"
-              className="w-full rounded-md border-2 border-slate-200 ps-4 outline-none"
+              className="h-10"
               value={userName}
               onChange={(e) => setUserName(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
             />
-            <button
-              className="rounded-xl bg-black px-3 py-2 text-sm tracking-wider text-white lg:px-5 lg:text-base lg:tracking-widest"
-              onClick={handleSubmit}
-            >
+            <Button className="h-10" onClick={handleSubmit}>
               Submit
-            </button>
+            </Button>
           </div>
         </div>
       </div>

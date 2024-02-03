@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { GeistSans } from "geist/font/sans";
+import { Toaster } from "sonner";
 
 export const metadata = {
   metadataBase: new URL("https://gh-link.vercel.app/"),
@@ -41,6 +42,7 @@ export default function RootLayout({
     <html lang="en" className={GeistSans.className}>
       <body>
         {children}
+        <Toaster />
         <Analytics />
       </body>
     </html>

@@ -10,10 +10,7 @@ interface BlurColorProps {
 export const BlurColor = ({ className }: BlurColorProps) => {
   return (
     <div
-      className={cn(
-        "fixed -z-10 h-screen w-screen overflow-x-clip",
-        className
-      )}
+      className={cn("fixed -z-10 h-screen w-screen overflow-x-clip", className)}
     >
       <motion.div
         initial={{ y: -400 }}

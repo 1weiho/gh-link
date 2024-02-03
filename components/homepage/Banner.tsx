@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Mouse } from "lucide-react";
 import Nav from "../Nav";
+import CreateLinkDialog from "@/components/dialog/create-link-dialog";
 
 const Banner = () => {
   return (
@@ -39,9 +40,7 @@ const Banner = () => {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.4, delay: 0.3 }}
         >
-          <button className="rounded-xl bg-black px-3 py-2 text-sm tracking-wider text-white lg:px-5 lg:py-3">
-            Create now
-          </button>
+          <CreateLinkDialog />
         </motion.div>
       </div>
       <motion.div
