@@ -53,13 +53,13 @@ const GithubCard = ({
         <div className="space-y-4 w-72">
           <GitHubData
             label="Following"
-            emoji="🚀"
+            emoji="🌟"
             colorClassName="bg-blue-100"
             count={following}
           />
           <GitHubData
             label="Follower"
-            emoji="🔍"
+            emoji="👀"
             colorClassName="bg-green-100"
             count={followers}
           />

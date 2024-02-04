@@ -24,7 +24,7 @@ const LinkCard = (Props: {
         scale: 0.95,
         transition: { delay: 0 },
       }}
-      className="flex w-full items-center space-x-4 rounded-3xl border-[0.08rem] border-slate-300 px-6 py-4 shadow shadow-slate-100 lg:duration-150 lg:hover:bg-slate-50"
+      className="flex w-full items-center space-x-4 rounded-3xl border-[0.08rem] border-slate-300 px-6 py-4 shadow shadow-slate-100 lg:duration-150 lg:hover:bg-slate-50 bg-white"
     >
       {Props.icon ? (
         <Image
