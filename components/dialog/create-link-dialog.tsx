@@ -24,7 +24,7 @@ const CreateLinkDialog = () => {
       return;
     }
 
-    router.push(`/${userName}/init`);
+    router.push(`/${userName}/init/check`);
   };
 
   return (

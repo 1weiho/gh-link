@@ -17,7 +17,7 @@ const Initialization = () => {
       toast.error("Please enter a valid GitHub username");
       return;
     }
-    router.push(`/${userName}/init`);
+    router.push(`/${userName}/init/check`);
   };
 
   return (

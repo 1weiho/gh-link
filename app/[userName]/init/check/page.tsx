@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { getGhUser } from "@/fetchers/github";
 import Link from "next/link";
 
-const InitPage = async ({ params }: { params: { userName: string } }) => {
+const CheckPage = async ({ params }: { params: { userName: string } }) => {
   const user = await getGhUser(params.userName);
 
   return (
@@ -24,7 +24,7 @@ const InitPage = async ({ params }: { params: { userName: string } }) => {
           className="mt-16"
         />
         <Button className="mt-20 h-10 w-20" asChild>
-          <Link href="init/add-link">Next</Link>
+          <Link href="add-link">Next</Link>
         </Button>
       </div>
       <div className="md:block hidden fixed inset-0 pointer-events-none">
@@ -34,4 +34,4 @@ const InitPage = async ({ params }: { params: { userName: string } }) => {
   );
 };
 
-export default InitPage;
+export default CheckPage;
